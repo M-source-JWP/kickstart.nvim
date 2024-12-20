@@ -414,7 +414,9 @@ require('lazy').setup({
       vim.keymap.set({ 'n', 'v', 'x' }, '<leader>p', '"+p', { noremap = true, silent = true, desc = 'Paste from clipboard' })
 
       vim.keymap.set('i', '<C-p>', '<C-r><C-p>+', { noremap = true, silent = true, desc = 'Paste from clipboard from within insert mode' })
-
+        
+      vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>ClangdSwitchSourceHeader<CR>', { noremap = true, silent = true })
+        
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
